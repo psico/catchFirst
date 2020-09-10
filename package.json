@@ -1,0 +1,19 @@
+{
+  "name": "catchfirst",
+  "version": "1.0.0",
+  "description": "Multiplayer game example",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/psico/catchFirst.git"
+  },
+  "author": "João Gabriel dos Santos Rodrigues",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/psico/catchFirst/issues"
+  },
+  "homepage": "https://github.com/psico/catchFirst#readme"
+}
