@@ -16,6 +16,16 @@
     const screen = document.getElementById("screen");
     const context = screen.getContext('2d');
 
+    const game = {
+        players: {
+            'player1': {x: 1, y: 1},
+            'player2': {x: 9, y: 9},
+        },
+        fruits: {
+            'fruit': {x: 3, y: 1}
+        }
+    }
+
     const color = 'red';
     const positionX = 0;
     const positionY = 0;
