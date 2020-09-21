@@ -37,6 +37,12 @@
     const width = 250;
     const heigth = 250;
 
+    document.addEventListener('keydown', handleKeydown);
+
+    function handleKeydown(event) {
+        console.log(event.key);
+    }
+
     renderScreen();
 
     function renderScreen() {
