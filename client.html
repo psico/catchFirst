@@ -40,7 +40,27 @@
     document.addEventListener('keydown', handleKeydown);
 
     function handleKeydown(event) {
-        console.log(event.key);
+        const keyPressed = event.key;
+
+        if (keyPressed === "ArrowUp") {
+            console.log("Up");
+            return
+        }
+
+        if (keyPressed === "ArrowRight") {
+            console.log("Right");
+            return
+        }
+
+        if (keyPressed === "ArrowDown") {
+            console.log("Down");
+            return
+        }
+
+        if (keyPressed === "ArrowLeft") {
+            console.log("Left");
+            return
+        }
     }
 
     renderScreen();
