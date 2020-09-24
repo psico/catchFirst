@@ -42,24 +42,25 @@
 
     function handleKeydown(event) {
         const keyPressed = event.key;
+        const player = game.players[currentPlayerId];
 
         if (keyPressed === "ArrowUp") {
-            console.log("Up");
+            player.y = player.y - 1;
             return
         }
 
         if (keyPressed === "ArrowRight") {
-            console.log("Right");
+            player.y = player.x + 1;
             return
         }
 
         if (keyPressed === "ArrowDown") {
-            console.log("Down");
+            player.y = player.y + 1;
             return
         }
 
         if (keyPressed === "ArrowLeft") {
-            console.log("Left");
+            player.y = player.x - 1;
             return
         }
     }
