@@ -44,12 +44,12 @@
                 return
             }
 
-            if (keyPressed === 'ArrowRight' && player.x + 1 >= screen.width) {
+            if (keyPressed === 'ArrowRight' && player.x + 1 < screen.width) {
                 player.x = player.x + 1;
                 return
             }
 
-            if (keyPressed === 'ArrowDown' && player.y + 1 >= screen.height) {
+            if (keyPressed === 'ArrowDown' && player.y + 1 < screen.height) {
                 player.y = player.y + 1;
                 return
             }
