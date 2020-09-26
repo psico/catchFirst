@@ -32,6 +32,16 @@
         }
     }
 
+    function createGame() {
+        function movePlayer(command) {
+            console.log(`Moving ${command.playerId} with ${command.keyPressed}`)
+        }
+
+        return {
+            movePlayer
+        }
+    }
+
     document.addEventListener('keydown', handleKeydown);
 
     function handleKeydown(event) {
