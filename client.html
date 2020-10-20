@@ -36,8 +36,30 @@
         function movePlayer(command) {
             console.log(`Moving ${command.playerId} with ${command.keyPressed}`);
 
+            const acceptedMoves = {
+                ArrowUp(player) {
+                    console.log("Moving player Up");
+                }
+
+                ArrowRight(player) {
+                    console.log("Moving player Right");
+                }
+
+                ArrowDown(player) {
+                    console.log("Moving player Down");
+                }
+
+                ArrowLeft(player) {
+                    console.log("Moving player Left");
+                }
+            }
+
             const keyPressed = command.keyPressed;
             const player = state.players[command.playerId];
+            const moveFunction = acceptedMoves[keyPressed];
+            moveFunction(player);
+
+            return //temp;
 
             if (keyPressed === 'ArrowUp' && player.y - 1 >= 0) {
                 player.y = player.y -1;
