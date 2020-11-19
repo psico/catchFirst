@@ -114,6 +114,7 @@
 
                     if(player.x === fruit.x && player.y === fruit.y) {
                         console.log(`COLLISION between ${playerId} and ${fruitId}`);
+                        removeFruit({ fruitId: fruitId})
                     }
                 }
             }
