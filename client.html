@@ -105,12 +105,30 @@
 
             if (player && moveFunction) {
                 moveFunction(player);
+                checkForFruitCollision();
+            }
+        }
+
+        function checkForFruitCollision() {
+            for(const playerId in state.players){
+                const player = state.players[playerId];
+
+                for(const fruitId in state.fruits) {
+                    const fruit = state.fruits[fruitId];
+                    console.log(`Checking ${playerId} and ${fruitId}`);
+
+                    if(player.x === fruit.x && player.y === fruit.y) {
+                        console.log(`COLLISION between ${playerId} and ${fruitId}`);
+                    }
+                }
             }
         }
 
         return {
             addPlayer,
             removePlayer,
+            addFruit,
+            removeFruit,
             movePlayer,
             state
         }
