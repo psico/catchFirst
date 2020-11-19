@@ -56,6 +56,12 @@
             }
         }
 
+        function removeFruit(command) {
+            const fruitId = command.fruitId;
+
+            delete state.fruits[fruitId];
+        }
+
         function movePlayer(command) {
             console.log(`game.movePlayer() -> Moving ${command.playerId} with ${command.keyPressed}`);
 
