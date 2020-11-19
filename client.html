@@ -81,7 +81,7 @@
             const player = state.players[command.playerId];
             const moveFunction = acceptedMoves[keyPressed];
 
-            if (moveFunction) {
+            if (player && moveFunction) {
                 moveFunction(player);
             }
         }
