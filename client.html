@@ -13,6 +13,7 @@
             height: 400px;
         }
     </style>
+    <script src="keyboard-listener.js"></script>
 </head>
 <body>
 <canvas id="screen" width="10" height="10"></canvas>
@@ -136,42 +137,6 @@
 
     game.addPlayer({ playerId: 'player1', playerX: 0, playerY: 0});
     game.addFruit({ fruitId: 'fruit1', fruitX: 3, fruitY: 3});
-
-    function createKeyboardListener() {
-        const state = {
-            observers: []
-        }
-
-        function subscribe(observerFunction) {
-            state.observers.push(observerFunction);
-        }
-
-        function notifyAll(command) {
-            console.log(`keyboardListener -> Notifying ${state.observers.length} observers`);
-
-            for (const observerFunction of state.observers) {
-                observerFunction(command);
-            }
-        }
-
-        document.addEventListener('keydown', handleKeydown);
-
-        function handleKeydown(event) {
-            const keyPressed = event.key;
-
-            const command = {
-                playerId: 'player1',
-                keyPressed
-            }
-
-            // game.movePlayer(command);
-            notifyAll(command);
-        }
-
-        return {
-            subscribe
-        }
-    }
 
     renderScreen();
 
