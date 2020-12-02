@@ -18,7 +18,9 @@
 <body>
 <canvas id="screen" width="10" height="10"></canvas>
 
-<script>
+<script type="module">
+    import createKeyboardListener from "./keyboard-listener";
+
     const screen = document.getElementById("screen");
     const context = screen.getContext('2d');
     const currentPlayerId = 'player1';
@@ -68,7 +70,7 @@
             const acceptedMoves = {
                 ArrowUp(player) {
                     if (player.y - 1 >= 0) {
-                        player.y = player.y -1;
+                        player.y = player.y - 1;
                         return
                     }
                 },
@@ -109,13 +111,13 @@
         function checkForFruitCollision(playerId) {
             const player = state.players[playerId]
 
-            for(const fruitId in state.fruits) {
+            for (const fruitId in state.fruits) {
                 const fruit = state.fruits[fruitId];
                 console.log(`Checking ${playerId} and ${fruitId}`);
 
-                if(player.x === fruit.x && player.y === fruit.y) {
+                if (player.x === fruit.x && player.y === fruit.y) {
                     console.log(`COLLISION between ${playerId} and ${fruitId}`);
-                    removeFruit({ fruitId: fruitId})
+                    removeFruit({fruitId: fruitId})
                 }
             }
 
@@ -135,8 +137,8 @@
     const keyboardListener = createKeyboardListener();
     keyboardListener.subscribe(game.movePlayer);
 
-    game.addPlayer({ playerId: 'player1', playerX: 0, playerY: 0});
-    game.addFruit({ fruitId: 'fruit1', fruitX: 3, fruitY: 3});
+    game.addPlayer({playerId: 'player1', playerX: 0, playerY: 0});
+    game.addFruit({fruitId: 'fruit1', fruitX: 3, fruitY: 3});
 
     renderScreen();
 
