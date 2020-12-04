@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Multiplayer game example",
   "main": "server.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/psico/catchFirst/issues"
   },
-  "homepage": "https://github.com/psico/catchFirst#readme"
+  "homepage": "https://github.com/psico/catchFirst#readme",
+  "dependencies": {
+    "node": "^15.3.0"
+  }
 }
