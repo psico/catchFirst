@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/psico/catchFirst#readme",
   "dependencies": {
+    "express": "^4.17.1",
     "node": "^15.3.0"
   }
 }
