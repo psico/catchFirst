@@ -30,8 +30,6 @@
     const screen = document.getElementById("screen");
     renderScreen(screen, game, requestAnimationFrame);
 
-    renderScreen();
-
     const socket = io();
 
     socket.on('connect', () =>{
