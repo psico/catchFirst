@@ -17,7 +17,7 @@ game.addFruit({fruitId: 'fruit1', fruitX: 3, fruitY: 3});
 game.addFruit({fruitId: 'fruit2', fruitX: 3, fruitY: 5});
 game.movePlayer({ playerId: "player1", keyPressed: "ArrowRight"})
 
-socketio.on("connection", () => {
+sockets.on("connection", () => {
     const playerId = sockets.id
     console.log(`> Player connected on server with id: ${playerId}`);
 });
