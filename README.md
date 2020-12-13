@@ -11,6 +11,8 @@
 Multiplayer game example
 
 # How to RUN
+npx nodemon
+
 
 
 
