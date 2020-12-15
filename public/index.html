@@ -37,6 +37,11 @@
         console.log(`> Player connected on server with id: ${playerId}`);
     });
 
+    socket.on('setup', (state) => {
+        console.log('Receiving  "setup" event from server');
+        console.log(state);
+    });
+
 </script>
 </body>
 </html>
