@@ -20,6 +20,8 @@ game.movePlayer({ playerId: "player1", keyPressed: "ArrowRight"})
 sockets.on("connection", (socket) => {
     const playerId = socket.id;
     console.log(`> Player connected on server with id: ${playerId}`);
+
+    socket.emit('setup', game.state);
 });
 
 server.listen(3000, () => {
