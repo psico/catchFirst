@@ -19,6 +19,11 @@ sockets.on("connection", (socket) => {
     console.log(game.state);
 
     socket.emit('setup', game.state);
+
+    socket.on('disconnect', () => {
+        game.removePlayer({ playerId });
+        console.log(`> Player disconected ${playerId}`)
+    });
 });
 
 server.listen(3000, () => {
