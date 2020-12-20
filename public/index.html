@@ -41,6 +41,11 @@
         game.setState(state);
     });
 
+    socket.on('add-player', (command) => {
+        console.log(`>Receiving ${command.type} -> ${command.playerX} -> ${command.playerY}`)
+        game.addPlayer(command);
+    });
+
 </script>
 </body>
 </html>
