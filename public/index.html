@@ -38,7 +38,11 @@
     });
 
     socket.on('setup', (state) => {
+        const playerId = socket.id;
         game.setState(state);
+
+        keyboardListener.registerPlayerId(playerId);
+        keyboardListener.subscribe(game.movePlayer);
     });
 
     socket.on('add-player', (command) => {
