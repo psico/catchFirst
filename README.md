@@ -10,6 +10,9 @@
 </p>
 Multiplayer game example
 
+# Description
+Simple project to pratice Javascript, Node, Socket.io and multiplayer game
+
 # How to RUN
 npx nodemon
 
