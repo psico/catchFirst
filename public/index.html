@@ -46,6 +46,11 @@
         game.addPlayer(command);
     });
 
+    socket.on('remove-player', (command) => {
+        console.log(`>Receiving ${command.type} -> ${command.playerX} -> ${command.playerY}`)
+        game.removePlayer(command);
+    });
+
 </script>
 </body>
 </html>
