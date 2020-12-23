@@ -46,6 +46,11 @@ export default function createGame() {
         const playerId = command.playerId;
 
         delete state.players[playerId];
+
+        notifyAll({
+            type: 'remove-player',
+            playerId: playerId
+        })
     }
 
     function addFruit(command) {
