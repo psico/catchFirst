@@ -17,7 +17,12 @@ export default function renderScreen(screen, game, requestAnimationFrame, curren
 
     const currentPlayer = game.state.players[currentPlayerId];
 
+    if (currentPlayer) {
+        context.fillStyle = "#F0DB4F";
+        context.fillRect(currentPlayer.x, currentPlayer.y, 1, 1);
+    }
+
     requestAnimationFrame(() => {
-        renderScreen(screen, game, requestAnimationFrame)
+        renderScreen(screen, game, requestAnimationFrame,currentPlayerId)
     });
 }
