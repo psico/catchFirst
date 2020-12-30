@@ -35,6 +35,9 @@
     socket.on('connect', () =>{
         const playerId = socket.id;
         console.log(`> Player connected on server with id: ${playerId}`);
+
+        const screen = document.getElementById('screen');
+        renderScreen(screen, game, requestAnimationFrame, playerId);
     });
 
     socket.on('setup', (state) => {
