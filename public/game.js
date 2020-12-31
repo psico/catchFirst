@@ -81,6 +81,11 @@ export default function createGame() {
         const fruitId = command.fruitId;
 
         delete state.fruits[fruitId];
+
+        notifyAll({
+            type: 'remove-fruit',
+            fruitId
+        })
     }
 
     function movePlayer(command) {
@@ -118,7 +123,7 @@ export default function createGame() {
 
         const keyPressed = command.keyPressed;
         const playerId = command.playerId;
-        const player = state.players[command.playerId];
+        const player = state.players[playerId];
         const moveFunction = acceptedMoves[keyPressed];
 
         if (player && moveFunction) {
@@ -143,7 +148,6 @@ export default function createGame() {
     }
 
     return {
-        start,
         addPlayer,
         removePlayer,
         addFruit,
@@ -151,6 +155,7 @@ export default function createGame() {
         movePlayer,
         state,
         setState,
-        subscribe
+        subscribe,
+        start
     }
 }
