@@ -29,6 +29,13 @@ sockets.on("connection", (socket) => {
         game.removePlayer({ playerId });
         console.log(`> Player disconected ${playerId}`)
     });
+
+    socket.on('move-player', () => {
+        command.playerId = playerId;
+        command.type = 'move-player';
+
+        game.movePlayer(command);
+    })
 });
 
 server.listen(3000, () => {
