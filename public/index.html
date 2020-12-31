@@ -71,6 +71,11 @@
        }
     });
 
+    socket.on('add-fruit', (command) => {
+        console.log(`Receiving ${command.type} -> ${command.fruitId}`);
+        game.addFruit(command);
+    })
+
 </script>
 </body>
 </html>
