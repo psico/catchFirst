@@ -7,8 +7,8 @@
         #screen {
             border: 10px solid #ccc;
             image-rendering: pixelated;
-            /*image-rendering: crisp-edges;*/
-            /*image-rendering: -moz-crisp-edges;*/
+            image-rendering: crisp-edges;
+            image-rendering: -moz-crisp-edges;
             width: 400px;
             height: 400px;
         }
@@ -25,10 +25,6 @@
 
     const game = createGame();
     const keyboardListener = createKeyboardListener(document);
-    keyboardListener.subscribe(game.movePlayer);
-
-    const screen = document.getElementById("screen");
-    renderScreen(screen, game, requestAnimationFrame);
 
     const socket = io();
 
@@ -74,6 +70,11 @@
     socket.on('add-fruit', (command) => {
         console.log(`Receiving ${command.type} -> ${command.fruitId}`);
         game.addFruit(command);
+    })
+
+    socket.on('remove-fruit', (command) => {
+        console.log(`Receiving ${command.type} -> ${command.fruitId}`);
+        game.removeFruit(command);
     })
 
 </script>
