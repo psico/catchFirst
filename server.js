@@ -30,7 +30,7 @@ sockets.on("connection", (socket) => {
         console.log(`> Player disconected ${playerId}`)
     });
 
-    socket.on('move-player', () => {
+    socket.on('move-player', (command) => {
         command.playerId = playerId;
         command.type = 'move-player';
 
