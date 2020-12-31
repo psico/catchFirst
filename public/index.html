@@ -61,6 +61,16 @@
         game.removePlayer(command);
     });
 
+    socket.on('move-player', (command) => {
+       console.log(`Receiving ${command.type} -> ${command.playerId}`);
+
+       const playerId = socket.id;
+
+       if (playerId !== command.playerId) {
+           game.movePlayer(command);
+       }
+    });
+
 </script>
 </body>
 </html>
